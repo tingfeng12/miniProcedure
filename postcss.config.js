@@ -14,9 +14,36 @@ module.exports = {
         return id
       }
     }),
+     /* ******* 引入tailwindcss ******* */
+    require("tailwindcss")({ config: "./tailwind.config.js" }),
+     // // 根据平台差异进行不同的样式处理
+     ...(
+      process.env.UNI_PLATFORM !== "h5"
+        ? [
+          // 使用postcss-class-name 包将小程序不支持的类名转换为支持的类名
+          require("postcss-class-rename")({
+            "\\\\:": "--",
+            // "\\\\/": "--",
+            "\\\\.": "--",
+            ".:": "--"
+          }),
+          // require("css-byebye")({
+          //   rulesToRemove: [
+          //     /\*/
+          //   ],
+          //   map: false
+          // })
+        ]
+        : [
+          require("autoprefixer")({
+            remove: true,
+          }),
+        ]
+    ),
+    /* ******* */
     require('autoprefixer')({
       remove: process.env.UNI_PLATFORM !== 'h5'
     }),
-    require('@dcloudio/vue-cli-plugin-uni/packages/postcss')
+    require('@dcloudio/vue-cli-plugin-uni/packages/postcss'),
   ]
 }

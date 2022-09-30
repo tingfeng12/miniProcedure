@@ -70,6 +70,7 @@
     "@vue/shared": "^3.0.0",
     "core-js": "^3.6.5",
     "flyio": "^0.6.2",
+    "node-sass": "^4.0.0",
     "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.11",
     "vuex": "^3.2.0"
@@ -89,12 +90,17 @@
     "@dcloudio/webpack-uni-pages-loader": "^2.0.1-36220220914001",
     "@vue/cli-plugin-babel": "~4.5.11",
     "@vue/cli-service": "~4.5.11",
+    "autoprefixer": "^8.0.0",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
     "jest": "^25.4.0",
     "mini-types": "*",
     "miniprogram-api-typings": "*",
+    "postcss": "^7.0.39",
+    "postcss-class-rename": "^1.0.1",
     "postcss-comment": "^2.0.0",
+    "postcss-loader": "^7.0.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [

@@ -5,5 +5,9 @@
       "miniprogram-api-typings",
       "mini-types"
     ]
+  },
+  "baseUrl": ".",
+  "paths": {
+    "@/*": ["src/*"]
   }
 }
